@@ -4,18 +4,22 @@ const Schema = mongoose.Schema;
 const OrderSchema = new Schema({
   pembayaranId: {
     type: Schema.Types.ObjectId,
+    ref: "pembayaran",
     required: true,
   },
   karyawanId: {
     type: Schema.Types.ObjectId,
+    ref: "user",
     required: true,
   },
   barangId: {
     type: Schema.Types.ObjectId,
+    ref: "barang",
     required: true,
   },
   vendorId: {
     type: Schema.Types.ObjectId,
+    ref: "vendor",
     required: true,
   },
   tanggal: {

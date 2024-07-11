@@ -9,6 +9,7 @@ const UserRoute = require("./routes/User.route");
 const BarangRoute = require("./routes/Barang.route");
 const VendorRoute = require("./routes/Vendor.route");
 const PembayaranRoute = require("./routes/Pembayaran.route");
+const OrderRoute = require("./routes/Order.route");
 
 const app = express();
 app.use(morgan("dev"));
@@ -24,6 +25,7 @@ app.use("/user", UserRoute);
 app.use("/barang", BarangRoute);
 app.use("/vendor", VendorRoute);
 app.use("/pembayaran", PembayaranRoute);
+app.use("/order", OrderRoute);
 
 app.use(async (req, res, next) => {
   next(createError.NotFound());
