@@ -33,9 +33,15 @@ const addVendorSchema = Joi.object({
   status: Joi.string().required(),
 });
 
+const addPembayaranSchema = Joi.object({
+  metode: Joi.string().required(),
+  jumlah: Joi.number().required(),
+});
+
 module.exports = {
   registerSchema,
   loginSchema,
   addBarangSchema,
   addVendorSchema,
+  addPembayaranSchema,
 };
