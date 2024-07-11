@@ -15,4 +15,12 @@ const loginSchema = Joi.object({
   password: Joi.string().required(),
 });
 
-module.exports = { registerSchema, loginSchema };
+const addBarangSchema = Joi.object({
+  barangId: Joi.string().required(),
+  harga: Joi.number().required(),
+  jenis: Joi.string().required(),
+  ukuran: Joi.number().required(),
+  merk: Joi.string().required(),
+});
+
+module.exports = { registerSchema, loginSchema, addBarangSchema };
