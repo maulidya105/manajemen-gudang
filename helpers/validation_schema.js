@@ -23,4 +23,19 @@ const addBarangSchema = Joi.object({
   merk: Joi.string().required(),
 });
 
-module.exports = { registerSchema, loginSchema, addBarangSchema };
+const addVendorSchema = Joi.object({
+  vendorId: Joi.string().required(),
+  nama: Joi.string().required(),
+  alamat: Joi.string().required(),
+  jenis: Joi.string().required(),
+  email: Joi.string().email().required(),
+  telp: Joi.string().required(),
+  status: Joi.string().required(),
+});
+
+module.exports = {
+  registerSchema,
+  loginSchema,
+  addBarangSchema,
+  addVendorSchema,
+};

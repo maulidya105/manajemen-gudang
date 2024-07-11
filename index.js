@@ -7,6 +7,7 @@ require("./helpers/init_mongodb");
 const AuthRoute = require("./routes/Auth.route");
 const UserRoute = require("./routes/User.route");
 const BarangRoute = require("./routes/Barang.route");
+const VendorRoute = require("./routes/Vendor.route");
 
 const app = express();
 app.use(morgan("dev"));
@@ -20,6 +21,7 @@ app.get("/", async (req, res, next) => {
 app.use("/auth", AuthRoute);
 app.use("/user", UserRoute);
 app.use("/barang", BarangRoute);
+app.use("/vendor", VendorRoute);
 
 app.use(async (req, res, next) => {
   next(createError.NotFound());
