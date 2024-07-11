@@ -35,10 +35,11 @@ PenjualanSchema.set("toJSON", {
 
     return {
       id: ret.id,
+      pembayaran: ret.pembayaranId,
       barang: ret.barangId,
       karyawan: ret.karyawanId,
-      totalPenjualan: ret.total,
-      tanggalWaktuPenjualan: ret.tanggal,
+      total: ret.total,
+      tanggal: ret.tanggal,
     };
   },
 });
