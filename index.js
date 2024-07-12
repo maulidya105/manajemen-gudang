@@ -1,6 +1,7 @@
 const express = require("express");
 const morgan = require("morgan");
 const http = require("http");
+const cors = require("cors");
 const createError = require("http-errors");
 require("dotenv").config();
 require("./helpers/init_mongodb");
@@ -16,6 +17,17 @@ const app = express();
 app.use(morgan("dev"));
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
+
+const corsOpts = {
+  origin: "*",
+
+  methods: ["GET", "POST", "PATCH", "DELETE"],
+
+  allowedHeaders: ["Content-Type", "Authorization"],
+};
+
+app.use(cors(corsOpts));
+app.options("*", cors(corsOpts));
 
 app.get("/", async (req, res, next) => {
   res.send("Hello, it's backend for manajemen gudang website by maulidya ika");
